@@ -1,0 +1,232 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+small, strong, sub,
+a, b, u, i, ol, ul, li,
+fieldset, form, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+html, body, div, span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background-color: #303030;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #6855d2;
+  text-decoration: none;
+}
+
+.slideShow-modulo {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1100px) {
+  .slideShow-modulo {
+    height: 100vh;
+  }
+}
+
+.slideShow {
+  position: relative;
+}
+
+.slideShow .sub-slides {
+  width: 100%;
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.slideShow .sub-slides::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.slideShow > li, .slideShow .sub-slides > li {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.slideShow > li::after, .slideShow .sub-slides > li::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.slideShow .sub-slides > li {
+  float: left;
+}
+
+.slideShow.remove-transitions {
+  transition: transform 0s;
+}
+
+.slideShow.remove-transitions .sub-slides {
+  transition: transform 0s;
+}
+
+@media only screen and (min-width: 1100px) {
+  .slideShow {
+    transform: translateZ(0);
+    transition: transform 0.6s;
+  }
+
+  .slideShow .sub-slides {
+    transition-duration: 0.6s;
+  }
+
+  .slideShow > li, .slideShow .sub-slides > li {
+    height: auto;
+    width: auto;
+  }
+}
+
+.conteudo-slideShow {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  float: left;
+  display: table;
+}
+
+.conteudo-slideShow .conteudo-modulo {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #6855d2;
+}
+
+.slideShow > li .conteudo-slideShow .conteudo-modulo {
+  background: #6855d2;
+}
+
+.conteudo-slideShow h2 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.conteudo-slideShow p {
+  margin: 1em 0 2em;
+  opacity: .6;
+}
+
+@media only screen and (min-width: 1100px) {
+  .conteudo-slideShow {
+    height: 89vh;
+    width: 90vw;
+    margin: 2vh 5vw;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+
+  .visivel .sub-visivel .conteudo-slideShow, 
+  .visivel > .conteudo-slideShow {
+    cursor: auto;
+  }
+
+  .slideShow > li:first-of-type .conteudo-slideShow {
+    margin-top: 5vh;
+  }
+
+  .sub-slides > li:first-of-type .conteudo-slideShow {
+    margin-left: 5vw;
+  }
+
+  .sub-slides > li .conteudo-slideShow {
+    margin-left: 1.25vw;
+    margin-right: 1.25vw;
+  }
+
+  .conteudo-slideShow .conteudo-modulo {
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-radius: inherit;
+    transition: opacity 0.6s;
+  }
+
+  .conteudo-slideShow::after {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background-color: #3a3a3a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    visibility: visivel;
+    transition: opacity 0.6s, visibility 0.6s;
+  }
+
+  .visivel .conteudo-slideShow .conteudo-modulo {
+    opacity: 1;
+  }
+
+  .visivel .conteudo-slideShow::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .conteudo-slideShow h2 {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+
+  .conteudo-slideShow p {
+    font-weight: bold;
+  }
+}
