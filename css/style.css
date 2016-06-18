@@ -2,7 +2,7 @@ html, body, div, span,
 h1, h2, h3, h4, h5, h6, p,
 small, strong, sub,
 a, b, u, i, ol, ul, li,
-fieldset, form, label {
+form, label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -13,30 +13,13 @@ fieldset, form, label {
 
 body {
   line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-html, body, div, span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  line-height: 1;
+  font-size: 62.5%;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background-color: #303030;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ol, ul {
@@ -45,19 +28,6 @@ ol, ul {
 
 *, *::after, *::before {
   box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
-  color: #ffffff;
-  background-color: #303030;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -69,11 +39,6 @@ a {
   overflow: hidden;
 }
 
-@media only screen and (min-width: 1100px) {
-  .slideShow-modulo {
-    height: 100vh;
-  }
-}
 
 .slideShow {
   position: relative;
@@ -116,21 +81,6 @@ a {
   transition: transform 0s;
 }
 
-@media only screen and (min-width: 1100px) {
-  .slideShow {
-    transform: translateZ(0);
-    transition: transform 0.6s;
-  }
-
-  .slideShow .sub-slides {
-    transition-duration: 0.6s;
-  }
-
-  .slideShow > li, .slideShow .sub-slides > li {
-    height: auto;
-    width: auto;
-  }
-}
 
 .conteudo-slideShow {
   position: relative;
@@ -159,6 +109,22 @@ a {
 .conteudo-slideShow p {
   margin: 1em 0 2em;
   opacity: .6;
+}
+
+@media only screen and (min-width: 1100px) {
+  .slideShow {
+    transform: translateZ(0);
+    transition: transform 0.6s;
+  }
+
+  .slideShow .sub-slides {
+    transition-duration: 0.6s;
+  }
+
+  .slideShow > li, .slideShow .sub-slides > li {
+    height: auto;
+    width: auto;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -228,5 +194,11 @@ a {
 
   .conteudo-slideShow p {
     font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .slideShow-modulo {
+    height: 100vh;
   }
 }
